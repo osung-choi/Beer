@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="beerItem"
+            type="com.osung.beer.domain.entity.Beer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/userProfile"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:setBeerImage="@{beerItem.imageUrl}"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:text="@{beerItem.name}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userProfile"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="beer name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
