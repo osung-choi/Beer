@@ -10,3 +10,4 @@
 * Retrofit2
 * Koin
 * Glide
+* RxJava, RxAndroid
